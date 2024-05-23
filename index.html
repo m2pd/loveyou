@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love you</title>
+    <style>
+      .wrap {
+        display: flex;
+        align-items: center;
+
+        .col {
+          flex: 1 1 50%;
+        }
+      }
+
+      select {
+        display: block;
+        height: 30px;
+        width: 50%;
+        border-radius: 5px;
+        margin-bottom: 30px;
+        border-color: none;
+      }
+
+      select {
+        position: absolute;
+        top: 20px;
+        left: 57%;
+        width: 100px;
+        height: 20px;
+        z-index: 99;
+      }
+
+      img {
+        max-width: 250px;
+        width: 100%;
+        display: none;
+        transition: 0.5s ease all;
+      }
+
+      img.active {
+        display: block;
+        transition: 0.5s ease all;
+        animation: fadeIn ease 1s;
+        -webkit-animation: fadeIn ease 1s;
+        -moz-animation: fadeIn ease 1s;
+        -o-animation: fadeIn ease 1s;
+        -ms-animation: fadeIn ease 1s;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-o-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-ms-keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="col">
+        <select id="photos">
+          <option value="photo-1" data-image="#opt-1" selected>144p</option>
+          <option value="photo-2" data-image="#opt-2">240p</option>
+          <option value="photo-3" data-image="#opt-3">480p</option>
+          <option value="photo-4" data-image="#opt-4">720p</option>
+          <option value="photo-5" data-image="#opt-5">1080p</option>
+        </select>
+      </div>
+      <div class="col">
+        <img
+          src="https://art.pixilart.com/1d0170230c1f003.gif"
+          id="opt-1"
+          class="active"
+        />
+        <img
+          src="https://media.istockphoto.com/id/1128084252/vector/pixel-heart.jpg?s=612x612&w=0&k=20&c=U5SNeXT-FGe7rPpzzpG_CcjU0NL34c_PihRU7M7wYqA="
+          id="opt-2"
+        />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkYTdksWADzsES79HGu_mHFQhtrQrXhvnI7e67StcaXg&s"
+          id="opt-3"
+        />
+        <img
+          src="https://media.istockphoto.com/id/1300648305/vector/heart-overgrown-with-florals.jpg?s=612x612&w=0&k=20&c=8dXaAiQGiYFzh_sQX_lLTd9RV2_q7UsRoxYOFFvzxZY="
+          id="opt-4"
+        />
+        <img src="https://i.imgur.com/MsVkXeY.gif" id="opt-5" />
+      </div>
+    </div>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $('#photos').change(function () {
+      _data_image = $('option:selected', this).data('image');
+      $('.active').removeClass('active');
+      $(_data_image).addClass('active');
+    });
+  </script>
+</html>
